@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>لیلیوم عاشقتم</title>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f43f5e;
+            font-family: Tahoma, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fb7185;
+            text-shadow: 0 0 10px rgba(251, 113, 133, 0.5);
+        }
+        #container {
+            font-size: 1.2rem;
+            line-height: 2.2;
+            word-spacing: 5px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border: 1px solid rgba(251, 113, 133, 0.2);
+        }
+        .heart {
+            color: #e11d48;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>برای لیلیومِ عزیزم ❤️</h1>
+    <div id="container">در حال نوشتن عشق بی‌پایان...</div>
+
+    <script>
+        const container = document.getElementById('container');
+        container.innerHTML = ''; // پاک کردن متن اولیه
+        
+        // هر بار که کاربر اسکرول می‌کند یا به‌طور خودکار، جملات بیشتری اضافه می‌شود
+        function addMoreLove() {
+            let batch = '';
+            for (let i = 0; i < 100; i++) {
+                batch += 'لیلیوم عاشقتم <span class="heart">❤️</span> ';
+            }
+            container.innerHTML += batch;
+        }
+
+        // افزودن اولیه
+        for (let i = 0; i < 5; i++) {
+            addMoreLove();
+        }
+
+        // افزودن خودکار و بی‌نهایت با اسکرول صفحه
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                addMoreLove();
+            }
+        });
+
+        // یا افزودن خودکار هر چند میلی‌ثانیه یک‌بار
+        setInterval(() => {
+            addMoreLove();
+        }, 1000);
+    </script>
+
+</body>
+</html>
